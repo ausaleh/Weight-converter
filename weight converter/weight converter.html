@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<style>
+	body{
+		margin-top:70px;
+		background: #333;
+		color: #fff;
+
+	}
+</style>
+<title>weight conveter</title>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 offset-md-3">
+				<h1 class="display-4 text-center mb-3">weight converter </h1>
+				<form>
+					<div class="form-group">
+						<input id="lbsinput" type="number" class="form-control form-control-lg" placeholder="enterpounds">
+					</div>
+				</form>
+				<div id="output">
+					<div class="card card-primary mb-2">
+						<div class="card-block">
+							<h4>Grams:</h4>
+							<div id="gramsoutput">
+								  
+							</div>
+						</div>
+						<div class="card card-success mb2">
+						<div class="card-block">
+							<h4>Kilograms:</h4>
+							<div id="kgoutput">
+								  
+							</div>
+						</div>
+						<div class="card card-danger mb-2">
+						<div class="card-block">
+							<h4>onces:</h4>
+							<div id="ozoutput">
+								  
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		
+		</div>
+	</div>
+
+<script>
+	document.getElementById('output').style.visibility='hidden';
+	document.getElementById('lbsinput').addEventListener('input',function(e)
+	{
+		/*making it visible when you type*/
+		document.getElementById('output').style.visibility='visible';
+		/*calculation for grams*/
+		let lbs = e.target.value;
+		document.getElementById('gramsoutput').innerHTML = lbs/0.0022046;
+		/*calculation for kilo grams*/
+		document.getElementById('kgoutput').innerHTML = lbs/2.2046;
+		/*calculation for once*/
+		document.getElementById('ozoutput').innerHTML = lbs*16;
+
+	});
+</script>
+</body>
+</html>
